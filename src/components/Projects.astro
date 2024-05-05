@@ -1,6 +1,10 @@
 ---
-import NextJSIcon from "../icons/NextJS.astro";
-import TailwindCSSIcon from "../icons/TailwindCSS.astro";
+import GitHub from "@/icons/GitHub.astro";
+import NextJSIcon from "@/icons/NextJS.astro";
+import TailwindCSSIcon from "@/icons/TailwindCSS.astro";
+import LinkButton from "@/components/LinkButton.astro";
+import WebIcon from "@/icons/Web.astro";
+
 const TAGS = {
   NEXT: {
     name: "Next.js",
@@ -24,9 +28,20 @@ const PROJECTS = [
     github: 'https://github.com./pheralb/svgl',
     image: '/projects/svgl.webp',
     tags: [TAGS.NEXT, TAGS.TAILWIND]
+  },
+  {
+    title: 'AdventJS - Retos de programación con JavaScript y TypeScript',
+    description: 'Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. Creada desde cero con Next.js, React y Tailwind CSS.',
+    link: '',
+    image: '/projects/adventjs.webp',
+    tags: [TAGS.NEXT, TAGS.TAILWIND]
   }
 ]
 ---
+
+  <section class="flex flex-col gap-y-20">
+
+  
 {
   PROJECTS.map(({title, description, tags, link, image, github}) => (
     <article>
@@ -46,6 +61,20 @@ const PROJECTS = [
         class="rounded shadow-2xl shadow-white/10" 
         src={image} 
         alt=`Captura de pantalla del proyecto ${image}` />
+        <footer class="flex gap-x-4 items-end justify-start mt-4">
+          { github && (
+            <LinkButton href={github} class="">
+              <GitHub class="size-6 mr-2" />
+                Ver código fuente
+            </LinkButton>
+          )}
+          <LinkButton href={link} >
+            <WebIcon class="size-6 mr-2" />
+            
+              Ver sitio web
+          </LinkButton>
+        </footer>
     </article>
   ))
 }
+</section>

@@ -1,16 +1,18 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import Badge from "../components/Badge.astro";
-import LinkedInIcon from "../icons/LinkedIn.astro";
-import GitHubIcon from "../icons/GitHub.astro";
-import SocialPill from "../components/SocialPill.astro";
-import MailIcon from "../icons/Mail.astro";
-import Experience from "../components/Experience.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import BriefcaseIcon from "../icons/Briefcase.astro";
-import CodeIcon from "../icons/Code.astro";
-import Projects from "../components/Projects.astro";
+import Layout from "@/layouts/Layout.astro";
+import Card from "@/components/Card.astro";
+import Badge from "@/components/Badge.astro";
+import LinkedInIcon from "@/icons/LinkedIn.astro";
+import GitHubIcon from "@/icons/GitHub.astro";
+import SocialPill from "@/components/SocialPill.astro";
+import MailIcon from "@/icons/Mail.astro";
+import Experience from "@/components/Experience.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import BriefcaseIcon from "@/icons/Briefcase.astro";
+import CodeIcon from "@/icons/Code.astro";
+import Projects from "@/components/Projects.astro";
+import UserIcon from "@/icons/UserCheck.astro";
+import AboutMe from "@/components/AboutMe.astro"
 ---
 
 <Layout title="Porfolio de Marcos - Desarrollador y Programador" description="">
@@ -68,6 +70,14 @@ import Projects from "../components/Projects.astro";
         Proyectos
       </h2>
       <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <UserIcon class="size-7" />
+        Sobre mí
+      </h2>
+      <AboutMe />
     </SectionContainer>
 
   </main>
